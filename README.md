@@ -12,9 +12,11 @@ The easiest way to install `node.js` is with [nave.sh](https://github.com/isaacs
 
 ## Usage
 
-You can extract the .opl data from stdin:
+You can extract the .opl data from any stream, including stdin:
 
 ```javascript
+// example.js
+
 var opl = require('opl-stream'),
     through = require('through2'),
     split = require('split');
@@ -32,6 +34,27 @@ process.stdin
 
 ```bash
 $> cat in.opl | node example.js 2> parsed.json 1> out.opl
+```
+
+## Example
+
+```bash
+$ echo -e "n204648 v37 dV c32514672 t2015-07-09T09:46:58Z i3043782 uDK_VJCS Tname=Wellington,is_in=North%20%Island%2c%%20%New%20%Zealand x174.7772239 y-41.2887639\n" | node example.js 1>/dev/null
+{
+  "node_id": "204648",
+  "version": "37",
+  "deleted": "V",
+  "changeset": "32514672",
+  "timestamp": "2015-07-09T09:46:58Z",
+  "user_id": "3043782",
+  "username": "DK_VJCS",
+  "tags": {
+    "name": "Wellington",
+    "is_in": "North Island, New Zealand"
+  },
+  "longitude": "174.7772239",
+  "latitude": "-41.2887639"
+}
 ```
 
 ## NPM Module
