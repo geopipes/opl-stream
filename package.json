@@ -1,0 +1,36 @@
+{
+  "name": "opl-stream",
+  "author": "mapzen",
+  "version": "0.1.0",
+  "description": "Streaming openstreetmap .opl format reader/writer",
+  "homepage": "https://github.com/geopipes/opl-stream",
+  "license": "MIT",
+  "main": "lib/stream.js",
+  "scripts": {
+    "test": "node test/run.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geopipes/opl-stream.git"
+  },
+  "keywords": [
+    "openstreetmap",
+    "opl",
+    "stream",
+    "parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/geopipes/opl-stream/issues"
+  },
+  "engines": {
+    "node": ">=0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "dependencies": {
+    "through2": "^0.5.1"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.2.2"
+  }
+}
